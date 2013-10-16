@@ -93,6 +93,27 @@
 			</table>
 			<?php } ?>
 
+			<?php if(count($_FILES)){ ?>
+			<h3>File uploads</h3>
+			<p># uploaded files: <?php echo count($_FILES); ?></p>
+			<table class="table table-striped table-condensed">
+				<thead>
+					<tr>
+						<th style="width: 250px">name</th>
+						<th>type</th>
+						<th>size</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php 
+						foreach ($_FILES as $key => $value) {
+							echo "<tr><td>".$value["name"]."</td><td>".$value["type"]."</td><td>".$value["size"]."</td></tr>";
+						}
+					 ?>
+				</tbody>
+			</table>
+			<?php } ?>
+
 			<h3>Example</h3>
 
 
