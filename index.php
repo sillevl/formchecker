@@ -4,7 +4,7 @@
  <html>
  <head>
  	<meta charset="utf-8">
- 	<title>HTML Form checker</title>
+ 	<title>HTML Form checker Yeeehaa !</title>
  	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
