@@ -1,4 +1,27 @@
-
+<?php 
+function render_table($data){ ?>
+				<table class="table table-striped table-condensed">
+				<thead>
+					<tr>
+						<th style="width: 250px">name</th>
+						<th>value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php 
+						foreach ($data as $key => $value) {
+							if(is_array($value)){
+								foreach ($value as $value) {
+									echo "<tr><td>$key</td><td>$value</td></tr>";
+								}
+							} else {
+								echo "<tr><td>$key</td><td>$value</td></tr>";
+							}
+						}
+					 ?>
+				</tbody>
+			</table>
+<?php } ?>
 
  <!DOCTYPE html>
  <html>
@@ -54,64 +77,21 @@
 			<p>You can use the example form to test out an HTTP POST request sent to this page.</p>
 
 			<?php if(count($_POST)){ ?>
-			<h3>HTTP POST</h3>
-			<p># HTTP POST variables: <?php echo count($_POST); ?></p>
-			<table class="table table-striped table-condensed">
-				<thead>
-					<tr>
-						<th style="width: 250px">name</th>
-						<th>value</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php 
-						foreach ($_POST as $key => $value) {
-							echo "<tr><td>$key</td><td>$value</td></tr>";
-						}
-					 ?>
-				</tbody>
-			</table>
+				<h3>HTTP POST</h3>
+				<p># HTTP POST variables: <?php echo count($_POST); ?></p>
+				<?php render_table($_GET); ?>
 			<?php } ?>
 
 			<?php if(count($_GET)){ ?>
-			<h3>HTTP GET</h3>
-			<p># HTTP GET variables: <?php echo count($_GET); ?></p>
-			<table class="table table-striped table-condensed">
-				<thead>
-					<tr>
-						<th style="width: 250px">name</th>
-						<th>value</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php 
-						foreach ($_GET as $key => $value) {
-							echo "<tr><td>$key</td><td>$value</td></tr>";
-						}
-					 ?>
-				</tbody>
-			</table>
+				<h3>HTTP GET</h3>
+				<p># HTTP GET variables: <?php echo count($_GET); ?></p>
+				<?php render_table($_GET); ?>
 			<?php } ?>
 
 			<?php if(count($_FILES)){ ?>
-			<h3>File uploads</h3>
-			<p># uploaded files: <?php echo count($_FILES); ?></p>
-			<table class="table table-striped table-condensed">
-				<thead>
-					<tr>
-						<th style="width: 250px">name</th>
-						<th>type</th>
-						<th>size</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php 
-						foreach ($_FILES as $key => $value) {
-							echo "<tr><td>".$value["name"]."</td><td>".$value["type"]."</td><td>".$value["size"]."</td></tr>";
-						}
-					 ?>
-				</tbody>
-			</table>
+				<h3>File uploads</h3>
+				<p># uploaded files: <?php echo count($_FILES); ?></p>
+				<?php render_table($_GET); ?>
 			<?php } ?>
 
 			<h3>Example</h3>
