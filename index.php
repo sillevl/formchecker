@@ -91,7 +91,7 @@ function render_table($data){ ?>
 			<?php if(count($_FILES)){ ?>
 				<h3>File uploads</h3>
 				<p># uploaded files: <?php echo count($_FILES); ?></p>
-				<?php render_table($_GET); ?>
+				<?php render_table($_FILES); ?>
 			<?php } ?>
 
 			<h3>Example</h3>
