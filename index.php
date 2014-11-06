@@ -79,7 +79,7 @@ function render_table($data){ ?>
 			<?php if(count($_POST)){ ?>
 				<h3>HTTP POST</h3>
 				<p># HTTP POST variables: <?php echo count($_POST); ?></p>
-				<?php render_table($_GET); ?>
+				<?php render_table($_POST); ?>
 			<?php } ?>
 
 			<?php if(count($_GET)){ ?>
